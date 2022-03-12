@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+}
+
+.section-1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.list{
+    width: 30%;
+    display: flex;
+    padding: 20px;
+    flex-flow: column wrap;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+label{
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+ul li{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}

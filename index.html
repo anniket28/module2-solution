@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="checkOffApp">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Shopping List Check Off</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="./angular.js"></script>
+        <script src="./app.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Check Off</h1>
+        </header>
+        <section class="section-1">
+            <div class="to-buy list" ng-controller="toBuyController as toBuy">
+                <label><b>To Buy</b></label>
+                <ul class="items-list">
+                    <li ng-repeat="item in toBuy.items">
+                        <div>Buy {{item.quantity}} {{item.name}}</div>
+                        <button style="margin-top: 10px;" class="button" ng-click="toBuy.moveItem($index)">Bought</button>
+                    </li>
+                </ul>
+                <div class="message" ng-if="!toBuy.items.length">
+                    Every thing bought
+                </div>
+            </div>
+            <div class="already-bought list" ng-controller="alreadyBoughtController as alreadyBought">
+                <label><b>Items Bought</b></label>
+                <ul class="items-list">
+                    <li ng-repeat="item in alreadyBought.items">
+                        <div style="margin-top: 10px;">Bought {{item.quantity}} {{item.name}}</div>
+                    </li>
+                </ul>
+                <div class="message" ng-hide="alreadyBought.items.length">
+                    No item bought yet
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
